@@ -40,8 +40,9 @@ class ApplicationService extends ChangeNotifier {
       // Show error snackbar if mutation fails
       final errorMessage =
           "Error creating blog post: ${result.exception.toString()}";
+      debugPrint(errorMessage);
       ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text(errorMessage)));
+          .showSnackBar(const SnackBar(content: Text('error in server')));
     } else {
       // Show success snackbar if mutation succeeds
       const successMessage = "Blog post created successfully!";
@@ -72,8 +73,9 @@ class ApplicationService extends ChangeNotifier {
       // Show error snackbar if mutation fails
       final errorMessage =
           "Error deleting blog post: ${result.exception.toString()}";
+      debugPrint(errorMessage);
       ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text(errorMessage)));
+          .showSnackBar(const SnackBar(content: Text('Server error')));
     } else {
       // Show success snackbar if mutation succeeds
       const successMessage = "Blog post deleted successfully!";
@@ -103,8 +105,9 @@ class ApplicationService extends ChangeNotifier {
       // Show error snackbar if query fails
       final errorMessage =
           "Error fetching blog post: ${result.exception.toString()}";
+      debugPrint(errorMessage);
       ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text(errorMessage)));
+          .showSnackBar(const SnackBar(content: Text('Server error')));
       return null;
     }
 
@@ -175,8 +178,9 @@ class ApplicationService extends ChangeNotifier {
       // Show error snackbar if mutation fails
       final errorMessage =
           "Error updating blog post: ${result.exception.toString()}";
+      debugPrint(errorMessage);
       ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text(errorMessage)));
+          .showSnackBar(const SnackBar(content: Text('Server error')));
     } else {
       // Show success snackbar if mutation succeeds
       const successMessage = "Blog post updated successfully!";
